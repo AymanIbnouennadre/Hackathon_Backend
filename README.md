@@ -14,3 +14,7 @@ drari awel haja :
  pip install -r requirements.txt  
 
  darori connexion khfifa wmadiro walo khliw taysali koulchy ou 3ayto lia ngad likom wehd lhaja ma3ndish kinshr7ha hna lahuma yser rasahl dkshy gadit kolshy 3ndk 3 étapes safe 
+
+ wehd lblan dayro f speech to text besh audio itaccepta bayi extension kanet witred .wav 7it whisper kiacceptih .wav knkhdem b FFmpeg wdommage hada makayn lib dyelo f python donc knkhdem bih local f pc ou ta fdeploy fserver wla docker  khaso ytinstala local fih donc instalih fpc dyelkom wzido chemin bin bhal python fel path 
+
+ hahwa lien : https://www.ffmpeg.org/download.html
