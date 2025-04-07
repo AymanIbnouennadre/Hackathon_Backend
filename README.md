@@ -1,0 +1,16 @@
+drari awel haja :
+ pycharm ultimate , python 3.11.9 64bit darori had joj 
+
+ mli tinstaliw python tajoutiw fel path ou tatctiviw pycharm utltimate b licence dmdrassa :
+
+ 7elou pycharm new project khtaro FastAPI ou gado chemin wel interpreter darori python 3.11.9 khtaroh ila tl3 sin ajoutiw 
+
+ hna mli aytcreea venv wlprojet cloniw lprojet  bhad la commande 
+
+ git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git 
+
+ après installiw requirements.txt bhadi : 
+
+ pip install -r requirements.txt  
+
+ darori connexion khfifa wmadiro walo khliw taysali koulchy ou 3ayto lia ngad likom wehd lhaja ma3ndish kinshr7ha hna lahuma yser rasahl dkshy gadit kolshy 3ndk 3 étapes safe 
