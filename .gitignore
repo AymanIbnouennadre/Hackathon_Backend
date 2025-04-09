@@ -1,0 +1,33 @@
+# Environnement virtuel
+.venv/
+
+
+# Fichiers Python générés
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Fichiers de logs ou temporaires
+*.log
+*.tmp
+
+# IDE PyCharm
+.idea/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Migrations (si tu en utilises mais veux les ignorer)
+# alembic/versions/
+
+# Tests ou outputs temporaires
+.coverage
+htmlcov/
+*.egg-info/
+
+# Jupyter notebooks checkpoints (si utilisés)
+.ipynb_checkpoints/
+
+# Cache pip
+pip-wheel-metadata/
