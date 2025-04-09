@@ -1,22 +1,150 @@
-drari awel haja :
- pycharm ultimate , python 3.11.9 64bit darori had joj 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width therapeutics-scale=1.0">
+    <title>Hackathon Backend - Guide d'Installation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            background-color: #fef5e7;
+            padding: 10px;
+            border-left: 4px solid #f39c12;
+            margin: 10px 0;
+        }
+        .rocket {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hackathon Backend - Guide d'Installation</h1>
 
- mli tinstaliw python tajoutiw fel path ou tatctiviw pycharm utltimate b licence dmdrassa :
+    <div class="section">
+        <p>Bienvenue dans le guide d’installation du projet backend pour le hackathon ! Suivez ces étapes pour configurer votre environnement de développement.</p>
+    </div>
 
- 7elou pycharm new project khtaro FastAPI ou gado chemin wel interpreter darori python 3.11.9 khtaroh ila tl3 sin ajoutiw 
+    <div class="section">
+        <h2>Prérequis</h2>
+        <p>Avant de commencer, assurez-vous d’avoir :</p>
+        <ul>
+            <li><strong>PyCharm Ultimate</strong> (avec une licence valide, ex. celle de l’école).</li>
+            <li><strong>Python 3.11.9 (64-bit)</strong> : <a href="https://www.python.org/downloads/release/python-3119/">Téléchargez ici</a>.</li>
+        </ul>
+        <div class="note">
+            <strong>Note :</strong> Ces outils sont indispensables pour garantir la compatibilité.
+        </div>
+    </div>
 
- hna mli aytcreea venv wlprojet cloniw lprojet  bhad la commande 
+    <div class="section">
+        <h2>Étape 1 : Configuration de l’Environnement</h2>
+        <ol>
+            <li><strong>Installation de Python</strong> :
+                <ul>
+                    <li>Ajoutez Python au PATH lors de l’installation.</li>
+                    <li>Vérifiez avec : <code>python --version</code> (attendu : <code>Python 3.11.9</code>).</li>
+                </ul>
+            </li>
+            <li><strong>Activation de PyCharm</strong> : Ouvrez PyCharm Ultimate et activez la licence.</li>
+            <li><strong>Nouveau Projet</strong> :
+                <ul>
+                    <li>Créez un projet avec <strong>FastAPI</strong>.</li>
+                    <li>Sélectionnez Python 3.11.9 comme interpréteur (ajoutez-le si nécessaire).</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
 
- git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git 
+    <div class="section">
+        <h2>Étape 2 : Clonage du Projet</h2>
+        <p>Clonez le dépôt dans le dossier de votre projet :</p>
+        <pre><code>git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git</code></pre>
+        <p>Ouvrez le dossier cloné dans PyCharm.</p>
+    </div>
 
- après installiw requirements.txt bhadi : 
+    <div class="section">
+        <h2>Étape 3 : Installation des Dépendances</h2>
+        <p>Installez les dépendances listées dans <code>requirements.txt</code> :</p>
+        <pre><code>pip install -r requirements.txt</code></pre>
+        <p>Assurez-vous d’avoir une connexion stable.</p>
+    </div>
 
- pip install -r requirements.txt  
+    <div class="section">
+        <h2>Étape 4 : Configuration de FFmpeg (Speech-to-Text)</h2>
+        <p>Pour la conversion audio, nous utilisons <strong>Whisper</strong> (format <code>.wav</code>) avec <strong>FFmpeg</strong>.</p>
+        <ol>
+            <li>Téléchargez FFmpeg : <a href="https://www.ffmpeg.org/download.html">ffmpeg.org/download</a>.</li>
+            <li>Installez-le :
+                <ul>
+                    <li><strong>Windows</strong> : Ajoutez le dossier <code>bin</code> au PATH.</li>
+                    <li><strong>Mac/Linux</strong> : Suivez les instructions spécifiques.</li>
+                </ul>
+            </li>
+            <li>Vérifiez avec : <pre><code>ffmpeg -version</code></pre></li>
+        </ol>
+        <div class="note">
+            <strong>Remarque :</strong> FFmpeg doit être installé localement (ou sur le serveur lors du déploiement).
+        </div>
+    </div>
 
- darori connexion khfifa wmadiro walo khliw taysali koulchy ou 3ayto lia ngad likom wehd lhaja ma3ndish kinshr7ha hna lahuma yser rasahl dkshy gadit kolshy 3ndk 3 étapes safe 
+    <div class="section">
+        <h2>Conseils</h2>
+        <ul>
+            <li>Utilisez une connexion rapide pour les téléchargements.</li>
+            <li>En cas de problème, contactez-moi pour de l’aide !</li>
+            <li>La suite sera expliquée plus tard.</li>
+        </ul>
+    </div>
 
- wehd lblan dayro f speech to text besh audio itaccepta bayi extension kanet witred .wav 7it whisper kiacceptih .wav knkhdem b FFmpeg wdommage hada makayn lib dyelo f python donc knkhdem bih local f pc ou ta fdeploy fserver wla docker  khaso ytinstala local fih donc instalih fpc dyelkom wzido chemin bin bhal python fel path 
-
- hahwa lien : https://www.ffmpeg.org/download.html
-
- besh tverivie 7el cmd kima ayi haja dir ffmpeg -version
+    <div class="rocket">
+        🚀 <strong>Bonne chance, et créons quelque chose d’incroyable !</strong> 🚀
+    </div>
+</body>
+</html>
