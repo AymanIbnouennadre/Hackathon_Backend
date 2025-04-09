@@ -6,7 +6,7 @@ import io
 router = APIRouter()
 
 # Clé API OCR.space
-OCR_API_KEY = "K81378610988957"
+OCR_API_KEY = "K82573522188957"
 
 # URL de l'API OCR.space
 OCR_API_URL = "https://api.ocr.space/parse/image"
