@@ -22,7 +22,7 @@ hna mli aytcreea `venv` wlprojet, cloniw lprojet bhad la commande :
 ```bash
 git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git
 ```
-**après installiw requirements.txt bhadi: ** 
+**après installiw requirements.txt bhadi:** 
 ```
 pip install -r requirements.txt
 ```
