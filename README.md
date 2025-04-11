@@ -5,6 +5,9 @@
 **drari awel haja :**  
 pycharm ultimate , python 3.11.9 64bit → **darori had joj**
 
+**python 3.11.9** : 
+https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
+
 ---
 
 **mli tinstaliw python**  
