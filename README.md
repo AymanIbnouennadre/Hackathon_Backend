@@ -1,3 +1,26 @@
+# 🚀 Repository Workflow push/pull
+---
+**1**
+```
+git pull --rebase origin main
+```
+**2**
+```
+git add .
+```
+**3**
+```
+git commit -m "name commit"
+```
+**4**
+```
+git push origin main
+```
+**li pusha i3lem fgroupe comme ça rah pushito besh npulliw**
+
+---
+
+
 # 🚀 Setup du projet Hackathon_Backend
 
 ---
