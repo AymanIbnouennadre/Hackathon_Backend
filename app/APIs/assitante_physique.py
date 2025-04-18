@@ -11,11 +11,7 @@ client = openai.OpenAI(
 
 router = APIRouter()
 
-
-
-
-
-@router.post("/chat", summary="Chat with AI assistant")
+@router.post("/")
 async def chat_with_assistant(request: str):
     try:
         response = client.chat.completions.create(
