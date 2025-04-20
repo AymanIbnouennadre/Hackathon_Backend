@@ -26,14 +26,22 @@ async def generer_feedback(
             prompt = (
                 f"الكلمة التي يجب نطقها هي: '{mot_attendu}'. "
                 f"المريض نطقها: '{transcription_patient}'. "
-                "هل نطق الكلمة بشكل صحيح؟ أجب بجملة واحده فقط، بطريقة مشجعة ولطيفة، وكأنك أخصائي نطق يعمل مع طفل يعاني من عسر القراءة."
+                "هل نطق الكلمة بشكل صحيح؟ إذا نعم،هنئه و قدم جملة واحدة مشجعة فقط. "
+                f"أما إذا لم ينطقها جيدًا، فقدم جملة واحدة مشجعة تتضمن تلميحًا بسيطًا يساعده على نطق '{mot_attendu}' بطريقة أوضح، "
+                "مثلاً فصل الحروف أو تمثيل صوتي بسيط. اجعل الأسلوب دائمًا لطيفًا ومشجعًا، وكأنك أخصائي نطق يساعد طفلًا يعاني من عسر القراءة."
             )
         else:
             prompt = (
                 f"Le mot à prononcer est : '{mot_attendu}'. "
-                f"Le patient a prononcé : '{transcription_patient}'. "
-                "Réponds par une seule phrase , de façon bienveillante et motivante, comme un orthophoniste s’adressant à un enfant dyslexique."
+                f"Le patient a dit : '{transcription_patient}'. "
+                "Indique s’il a bien prononcé le mot ou non. "
+                "Si la prononciation est correcte, félicite-le chaleureusement dans une seule phrase bienveillante et encourageante. "
+                "Si la prononciation est incorrecte, ne dis jamais que c’est faux ou incorrect. "
+                f"À la place, dis que c’est une bonne tentative et propose une seule phrase gentille contenant un indice doux et motivant pour l’aider à mieux dire '{mot_attendu}', "
+                "comme le découper en syllabes ou faire une comparaison facile. "
+                "Parle toujours avec douceur, comme un orthophoniste souriant qui parle à un jeune enfant dyslexique, sans jamais utiliser de jugement négatif."
             )
+
 
     elif type_exercice == "quiz":
         if langue == "ar":
