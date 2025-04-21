@@ -57,6 +57,7 @@ async def chat_with_assistant(request: ChatRequest, session_id: str = Query("def
                                "Avoid giving long paragraphs. "
                                "Don't mix languages in one message."
                                "if user talk in arabic then answer in arabic"
+                               "when talking in arabic, don't use any other language words"
                            )
                        }
                    ] + session_history + [{"role": "user", "content": request.message}]
