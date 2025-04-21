@@ -6,7 +6,7 @@ import tempfile
 from pathlib import Path
 from datetime import datetime, timedelta
 
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from gtts import gTTS
 from groq import Groq
@@ -14,29 +14,27 @@ from dotenv import load_dotenv
 
 # ==== CONFIGURATION ====
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("AssistVocal")
+logger = logging.getLogger("AssistVocalAr")
 
 load_dotenv()
 
-HISTORY_FILE = Path("history.json")
+HISTORY_FILE = Path("history_ar.json")
 MAX_HISTORY = 5
 DEFAULT_SESSION_ID = "default"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 if not GROQ_API_KEY:
-    raise ValueError("Clé API GROQ manquante dans le fichier .env")
+    raise ValueError("Clé API GROQ manquante dans .env")
 
 groq_client = Groq(api_key=GROQ_API_KEY)
 
-app = FastAPI()
 router = APIRouter()
 
 # ==== INITIALISATION ====
 def init_history():
     if not HISTORY_FILE.exists():
         HISTORY_FILE.write_text(json.dumps({}, indent=2), encoding="utf-8")
-        logger.info("Fichier d'historique initialisé.")
 
 def read_history():
     try:
@@ -49,7 +47,6 @@ def write_history(data):
     try:
         HISTORY_FILE.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     except Exception as e:
-        logger.error(f"Erreur écriture historique: {e}")
         raise HTTPException(status_code=500, detail="Erreur d'enregistrement de l'historique.")
 
 init_history()
@@ -76,7 +73,7 @@ def generate_response(transcription: str, session_id: str) -> str:
     cleaned.append({"role": "user", "content": transcription, "timestamp": datetime.now().isoformat()})
     cleaned = cleaned[-MAX_HISTORY:]
 
-    messages = [{"role": "system", "content": "Vous êtes une assistante vocale intelligente. Répondez brièvement en français."}] + [
+    messages = [{"role": "system", "content": "أنتِ مساعدة ذكية. أجيبي بإيجاز وبالعربية."}] + [
         {"role": msg["role"], "content": msg["content"]} for msg in cleaned
     ]
 
@@ -94,43 +91,42 @@ def generate_response(transcription: str, session_id: str) -> str:
         return answer
     except Exception as e:
         logger.error(f"Erreur API Groq: {e}")
-        return "Désolé, une erreur s'est produite."
+        return "عذرًا، حدث خطأ أثناء معالجة الطلب."
 
 def synthesize_speech(text: str) -> str:
     try:
         with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as temp_audio:
-            gTTS(text=text, lang="fr").save(temp_audio.name)
+            gTTS(text=text, lang="ar").save(temp_audio.name)
             return temp_audio.name
     except Exception as e:
         logger.error(f"Erreur synthèse vocale: {e}")
-        raise HTTPException(status_code=500, detail="Erreur de synthèse vocale.")
+        raise HTTPException(status_code=500, detail="خطأ في توليد الصوت.")
 
 def clean_temp_files(*paths):
     for path in paths:
         if path and Path(path).exists():
             try:
                 Path(path).unlink()
-                logger.debug(f"Fichier temporaire supprimé: {path}")
             except Exception as e:
                 logger.warning(f"Erreur suppression {path}: {e}")
 
 # ==== ROUTE ====
 @router.post("/")
-async def assist_vocal(request: AssistVocalRequest):
+async def assist_vocal_ar(request: AssistVocalRequest):
     session_id = request.session_id
     transcription = request.text.strip()
 
     if not transcription:
-        raise HTTPException(status_code=400, detail="Texte vide fourni.")
+        raise HTTPException(status_code=400, detail="النص المقدم فارغ.")
 
-    audio_path = None
+    temp_audio_path = None
     try:
         response_text = generate_response(transcription, session_id)
-        audio_path = synthesize_speech(response_text)
-        audio_b64 = base64.b64encode(Path(audio_path).read_bytes()).decode("utf-8")
+        temp_audio_path = synthesize_speech(response_text)
+        audio_b64 = base64.b64encode(Path(temp_audio_path).read_bytes()).decode("utf-8")
 
         return {
-            "langue_detectee": "fr",
+            "langue_detectee": "ar",
             "transcription": transcription,
             "response": response_text,
             "audio_content": audio_b64,
@@ -139,23 +135,4 @@ async def assist_vocal(request: AssistVocalRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erreur traitement: {str(e)}")
     finally:
-        clean_temp_files(audio_path)
-
-app.include_router(router)
-
-# ==== NETTOYAGE AUTOMATIQUE HISTORIQUE ====
-def clean_old_history(days: int = 30):
-    try:
-        history = read_history()
-        cutoff = datetime.now() - timedelta(days=days)
-        for session_id in list(history.keys()):
-            history[session_id] = [
-                msg for msg in history[session_id]
-                if datetime.fromisoformat(msg["timestamp"]) >= cutoff
-            ]
-            if not history[session_id]:
-                del history[session_id]
-        write_history(history)
-        logger.info(f"Historique nettoyé (> {days} jours).")
-    except Exception as e:
-        logger.error(f"Erreur nettoyage historique: {e}")
+        clean_temp_files(temp_audio_path)
