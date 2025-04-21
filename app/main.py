@@ -5,8 +5,7 @@ from app.APIs.image_to_textAR import router as ar_router
 from app.APIs.text_to_speechFR import router as tts_fr_router
 from app.APIs.text_to_speechAR import router as tts_ar_router
 from  app.APIs.speech_to_textAR import router as stt_ar_router
-from app.APIs.speech_to_textFR import router as stt_fr_router
-from app.APIs.assitante_vocal import router as assist_vocal
+from app.APIs.assitante_vocal import router as assist_vocal_fr
 from app.APIs.speech_to_textFR import router as stt_fr_router
 from app.APIs.assistante_ar import router as assist_vocal_ar
 from app.APIs.gtts_assistante import router as gtts_fr_router
@@ -37,7 +36,7 @@ app.include_router(stt_ar_router, prefix="/convert-speech-to-textAR", tags=["STT
 app.include_router(stt_fr_router, prefix="/convert-speech-to-textFR", tags=["STT French"])
 
 # ✅ Inclure les routeurs des APIs Hackathon
-app.include_router(assist_vocal,prefix="/assitante_vocal" , tags=["ASSITANTE VOCAL FOR SALMA"])
+app.include_router(assist_vocal_fr,prefix="/assitante_vocal" , tags=["ASSITANTE VOCAL FOR SALMA"])
 
 app.include_router(assist_vocal_ar,prefix="/assitante_vocal_ar" , tags=["ASSITANTE VOCAL FOR SALMA"])
 
