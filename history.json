@@ -2,33 +2,21 @@
   "default": [
     {
       "role": "user",
-      "content": "donne-moi quelque chose parmi ces stratégies",
-      "timestamp": "2025-04-21T14:46:37.792613"
     },
     {
       "role": "assistant",
-      "content": "Une stratégie très utile pour les personnes dyslexiques est la **méthode des phrases courtes**. L'idée est de diviser les phrases en petites sections, plutôt que de les lire d'une traite. Cela peut aider à réduire la confusion et à améliorer la compréhension.\n\nImaginez que vous avez une phrase longue, comme cela : \"La maison de mon grand-père est très grande et très belle.\" Vous pouvez la",
-      "timestamp": "2025-04-21T14:46:38.351514"
     },
     {
       "role": "user",
-      "content": "bonjour assistante",
-      "timestamp": "2025-04-21T16:07:12.827612"
     },
     {
       "role": "assistant",
-      "content": "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
-      "timestamp": "2025-04-21T16:07:13.907614"
     },
     {
       "role": "user",
-      "content": "j'ai pas compris",
-      "timestamp": "2025-04-21T16:07:21.680887"
     },
     {
       "role": "assistant",
-      "content": "Pas de problème ! Je peux essayer de clarifier. Qu'est-ce que vous avez essayé de faire ou de comprendre ? Je serais heureuse de vous aider.",
-      "timestamp": "2025-04-21T16:07:22.159897"
     }
   ]
 }
