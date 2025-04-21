@@ -2,10 +2,12 @@ import os
 import base64
 import logging
 import tempfile
+
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from gtts import gTTS
 from dotenv import load_dotenv
 from groq import Groq
+
 from ..model import model  # Assure-toi que ce modèle est correctement chargé
 
 # Configuration
