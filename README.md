@@ -1,4 +1,4 @@
-# 🚀 Hackathon_Backend – DyslexiaCare API
+# 🚀 Hackathon_Backend – DyslexiaCare APIs WITH FAST API FRAMEWORK
 
 This is the backend repository for **DyslexiaCare**, an AI-powered assistive platform for children with dyslexia. It provides essential services such as speech-to-text (STT), text-to-speech (TTS), image-to-text (OCR), and chatbot functionalities. Built using Python and open-source AI models, this backend powers the core assistive features of the platform.
 
@@ -32,13 +32,7 @@ This is the backend repository for **DyslexiaCare**, an AI-powered assistive pla
 ### ✅ Step 1: Clone the Project
 
 Using terminal:
-```bash
-git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git
-
----
 **Step 1 : Clone Project**
-
-
 ```bash
 git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git
 ```
