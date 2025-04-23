@@ -73,17 +73,24 @@ def generate_response(transcription: str, session_id: str) -> str:
     cleaned.append({"role": "user", "content": transcription, "timestamp": datetime.now().isoformat()})
     cleaned = cleaned[-MAX_HISTORY:]
 
-    messages = [{"role": "system", "content": "أنتِ مساعدة ذكية. أجيبي بإيجاز وبالعربية."}] + [
-        {"role": msg["role"], "content": msg["content"]} for msg in cleaned
-    ]
+    messages = [{"role": "system", "content": (
+        "أنتِ مساعدة صوتية تمثلين أخصائية نطق.\n"
+        "تتحدثين مع أطفال يعانون من عسر القراءة أو مع أوليائهم.\n"
+        "تحدثي بلغة بسيطة وبأسلوب مشجع واحترافي.\n"
+        "- أجيبي بجملة أو جملتين فقط، أو ثلاث جمل كحد أقصى إذا دعت الحاجة.\n"
+        "- لا تخلطي بين اللغات في نفس الجواب.\n"
+    )}] + [
+                   {"role": msg["role"], "content": msg["content"]} for msg in cleaned
+               ]
 
     try:
         response = groq_client.chat.completions.create(
             model="llama-3.1-8b-instant",
             messages=messages,
-            max_tokens=100,
-            temperature=0.7
+            max_tokens=130,  # 👈 pour éviter les réponses longues
+            temperature=0.5
         )
+
         answer = response.choices[0].message.content.strip()
         cleaned.append({"role": "assistant", "content": answer, "timestamp": datetime.now().isoformat()})
         history[session_id] = cleaned
