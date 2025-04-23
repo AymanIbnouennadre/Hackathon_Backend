@@ -1,14 +1,39 @@
+# 🚀 Hackathon_Backend – DyslexiaCare API
 
-# 🚀 Setup Hackathon_Backend Project
+This is the backend repository for **DyslexiaCare**, an AI-powered assistive platform for children with dyslexia. It provides essential services such as speech-to-text (STT), text-to-speech (TTS), image-to-text (OCR), and chatbot functionalities. Built using Python and open-source AI models, this backend powers the core assistive features of the platform.
 
 ---
 
-**Requirements**  
-pycharm ultimate , python 3.11.9 64bit  , device 16 gb RAM min , CPU threads >=8
+## 📌 Project Features
 
-**Install python 3.11.9 and add to path** : 
-🔗 https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
+- 🗣️ **Speech-to-Text (STT)** via Whisper model  
+- 🔊 **Text-to-Speech (TTS)**  
+- 🖼️ **Image-to-Text (OCR)**  
+- 💬 **AI Chatbot** with support for French and Arabic  
+- 🎯 RESTful API endpoints for frontend integration  
 
+---
+
+## 🧠 Requirements
+
+| Component         | Version/Details              |
+|------------------|------------------------------|
+| IDE              | Pycharm Ultimate (recommended) |
+| Python           | 3.11.9 (64-bit)              |
+| RAM              | Minimum 16 GB                |
+| CPU              | ≥ 8 threads                  |
+
+👉 [Download Python 3.11.9](https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe)
+
+---
+
+## ⚙️ Installation Guide
+
+### ✅ Step 1: Clone the Project
+
+Using terminal:
+```bash
+git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git
 
 ---
 **Step 1 : Clone Project**
