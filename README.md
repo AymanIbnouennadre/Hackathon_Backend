@@ -1,79 +1,29 @@
-# 🚀 Repository Workflow push/pull
----
-**1**
-```
-git pull --rebase origin main
-```
-**2**
-```
-git add .
-```
-**3**
-```
-git commit -m "name commit"
-```
-**4**
-```
-git push origin main
-```
-**li pusha i3lem fgroupe comme ça rah pushito besh npulliw**
+
+# 🚀 Setup Hackathon_Backend Project
 
 ---
 
+**Requirements**  
+pycharm ultimate , python 3.11.9 64bit 
 
-# 🚀 Setup du projet Hackathon_Backend
+**Install python 3.11.9 and add to path** : 
+🔗 https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
 
----
-
-**drari awel haja :**  
-pycharm ultimate , python 3.11.9 64bit → **darori had joj**
-
-**python 3.11.9** : 
-https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
 
 ---
-
-**mli tinstaliw python**  
-tajoutiw fel path ou tatctiviw pycharm utltimate b licence dmdrassa :
-
----
-
-7elou pycharm `new project`, khtaro `FastAPI` ou gado chemin  
-wel interpreter **darori python 3.11.9**, khtaroh ila tl3 sin ajoutiw
-
----
-
-hna mli aytcreea `venv` wlprojet, cloniw lprojet bhad la commande :
+**Step 1 : Clone Project**
 
 ```bash
 git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git
 ```
-**après installiw requirements.txt bhadi:** 
+**Install Requirements** 
 ```
 pip install -r requirements.txt
 ```
-darori connexion khfifa
-wmadiro walo, khliw taysali koulchy
-ou 3ayto lia ngad likom wehd lhaja ma3ndish kinshr7ha hna
-lahuma yser rasahl dkshy gadit kolshy
-3ndk 3 étapes safe
+**Install ffmpeg for Whisper STT and add to path**
 
-wehd lblan dayro f speech to text
-besh audio itaccepta bayi extension kanet witred .wav
-7it whisper kiacceptih .wav
-knkhdem b FFmpeg
-w dommage hada makayn lib dyelo f python
-donc knkhdem bih local f pc
-ou ta fdeploy fserver wla docker khaso ytinstala local fih
-donc instalih fpc dyelkom
-wzido chemin bin bhal python fel path
-
-**hahwa lien :**
 🔗 https://www.ffmpeg.org/download.html
-
-besh tverivie
-7el cmd kima ayi haja
-dir : 
+And verify 
 ```
 ffmpeg -version
 
