@@ -12,7 +12,7 @@ pycharm ultimate , python 3.11.9 64bit
 
 ---
 **Step 1 : Clone Project**
-//you can clonit from Pycharm ultimate IDE Manual (it's better) 
+you can clone it using Pycharm ultimate IDE graphic  (it's better) ( new => Project from Version Control and Confirm)
 
 ```bash
 git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git
