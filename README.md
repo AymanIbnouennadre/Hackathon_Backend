@@ -12,16 +12,18 @@ pycharm ultimate , python 3.11.9 64bit
 
 ---
 **Step 1 : Clone Project**
-you can clone it using Pycharm ultimate IDE graphic  (it's better) ( new => Project from Version Control and Confirm)
+
 
 ```bash
 git clone https://github.com/AymanIbnouennadre/Hackathon_Backend.git
 ```
-you can clonit from Pycharm ultimate IDE Manual (it's better) 
+you can clone it using Pycharm ultimate IDE graphic  (it's better) ( new => Project from Version Control and Confirm)
+---
 **Step 2 : Install Requirements** 
 ```
 pip install -r requirements.txt
 ```
+---
 **Step 3 : Install ffmpeg for Whisper STT and add to path**
 
 🔗 https://www.ffmpeg.org/download.html
