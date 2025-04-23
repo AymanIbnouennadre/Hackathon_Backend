@@ -19,7 +19,7 @@ logger = logging.getLogger("AssistVocal")
 load_dotenv()
 
 HISTORY_FILE = Path("history.json")
-MAX_HISTORY = 5
+MAX_HISTORY = 100
 DEFAULT_SESSION_ID = "default"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")

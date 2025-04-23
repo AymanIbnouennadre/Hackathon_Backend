@@ -98,7 +98,7 @@ async def chat_with_assistant(request: ChatRequest, session_id: str = Query("def
         # Update and trim session history
         session_history.append({"role": "user", "content": request.message})
         session_history.append({"role": "assistant", "content": assistant_reply})
-        session_history = session_history[-10:]
+        session_history = session_history[-100:]
 
         history_data[session_id] = session_history
         write_history(history_data, language)
