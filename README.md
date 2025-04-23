@@ -4,7 +4,7 @@
 ---
 
 **Requirements**  
-pycharm ultimate , python 3.11.9 64bit 
+pycharm ultimate , python 3.11.9 64bit  , device 16 gb RAM min , CPU threads >=8
 
 **Install python 3.11.9 and add to path** : 
 🔗 https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
